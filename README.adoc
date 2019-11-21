@@ -1,0 +1,48 @@
+## logmetrics-demo
+
+Logmetrics framework provides simplified configuration to log payload for spring project.
+
+## Maven Repo 
+```
+maven { url "https://devxchange.bintray.com/maven-repo/"}
+
+```
+
+## Dependencies
+
+```
+compile ("io.devxchange:logmetrics:1.0.0-SNAPSHOT")
+	
+```
+
+## Usage
+
+### Enable logmetrics - Add below property to your application.properties file
+
+```
+logmetrics.logging.enabled=true
+logmetrics.logging.request.enabled=true
+logmetrics.logging.response.enabled=true
+
+```
+
+### Injecting the LogWriterManager & adding Interceptors
+
+```
+@Configuration
+@EnableWebMvc
+public class AppConfig extends WebMvcConfigurerAdapter 
+{
+	@Autowired
+	@Qualifier("manager.logwriter")
+	private LogWriterManager logWriterManager;
+
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) 
+	{
+		registry.addInterceptor(new RestTransactionInterceptor(logWriterManager));
+	}
+}
+	
+```
+

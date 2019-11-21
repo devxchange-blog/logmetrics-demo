@@ -27,7 +27,7 @@ public class SwaggerConfig extends WebMvcConfigurerAdapter {
 			logger.debug("exiting api()");
 		}
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("io.oneclicklabs.demo.controller"))
+				.apis(RequestHandlerSelectors.basePackage("io.devxchange.logmetrics.demo.controller"))
 				.paths(PathSelectors.any()).build();
 	}
 

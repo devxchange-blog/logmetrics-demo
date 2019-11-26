@@ -20,18 +20,16 @@ sourceCompatibility = 1.8
 repositories {
 	mavenCentral()
 	maven {
-		url  "https://devxchange.bintray.com/maven-repo/"
+		url  "https://dl.bintray.com/m2/release"
 	}
 }
-
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.4.0'
 	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.4.0'
-	
-	compile ("io.devxchange:logmetrics:1.0.0-SNAPSHOT")
+	compile ("io.devxchange:logmetrics:0.0.1")
 	compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.2.RELEASE'
     compile("javax.servlet:javax.servlet-api:3.1.0")
 	compile group: 'commons-io', name: 'commons-io', version: '2.4'
@@ -39,7 +37,5 @@ dependencies {
     compile("com.jayway.jsonpath:json-path:2.0.0")
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
 	compile group: 'commons-collections', name: 'commons-collections', version: '3.0'
-	
-	
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

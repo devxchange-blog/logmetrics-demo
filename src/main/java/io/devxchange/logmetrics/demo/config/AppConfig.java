@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import io.devxchange.logmetrics.interceptor.RestPayloadInterceptor;
+import io.devxchange.logmetrics.interceptor.FrontendRestInterceptor;
 import io.devxchange.logmetrics.writer.LogWriterManager;
 
 /**
@@ -24,7 +24,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(new RestPayloadInterceptor(logWriterManager));
+		registry.addInterceptor(new FrontendRestInterceptor(logWriterManager));
 	}
 
 }
